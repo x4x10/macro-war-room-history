@@ -2,7 +2,7 @@
   "version": 1,
   "source": "macro-war-room-public-summary-v2",
   "publicUrl": "https://crashriskmonitor.vercel.app",
-  "updatedAt": "2026-06-18T20:52:47.850Z",
+  "updatedAt": "2026-06-18T21:04:25.929Z",
   "keepDays": 90,
   "buckets": [
     {
@@ -18,6 +18,17 @@
     },
     {
       "bucketStart": "2026-06-18T20:00:00.000Z",
+      "crashRisk": 54,
+      "severity": 54,
+      "signalCoherence": 68,
+      "condition": "yellow",
+      "dominantRegime": "Calm",
+      "confidenceStatus": "high",
+      "sourceMode": "live",
+      "samples": 1
+    },
+    {
+      "bucketStart": "2026-06-18T21:00:00.000Z",
       "crashRisk": 54,
       "severity": 54,
       "signalCoherence": 68,
