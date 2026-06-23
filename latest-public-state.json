@@ -1,14 +1,14 @@
 {
   "version": 1,
   "source": "gateway-live-snapshot",
-  "updatedAt": "2026-06-23T16:12:29.445Z",
+  "updatedAt": "2026-06-23T18:23:42.256Z",
   "summaryV2": {
-    "asOf": "2026-06-23T16:12:29.434Z",
+    "asOf": "2026-06-23T18:23:42.243Z",
     "modelVersion": "trust-engine-v2.4.0",
     "schemaVersion": "summary-v2.3.0",
     "policyVersion": "portfolio-policy-daily-close-v1.2.0",
     "dataVersion": "public-live-normalized-v1.2.0",
-    "dataFingerprint": "dfp_c532cf1b1f2d1b44",
+    "dataFingerprint": "dfp_924cc725f76ef68e",
     "sourceMode": "live",
     "marketState": "live",
     "condition": "red",
@@ -16,12 +16,12 @@
     "regimeScore": 82,
     "runnerUpRegime": "Systemic Crash Setup",
     "acuteShockRisk": 38,
-    "creditAccidentRisk": 53,
-    "liquiditySqueezeRisk": 57,
-    "structuralFragilityRisk": 54,
+    "creditAccidentRisk": 54,
+    "liquiditySqueezeRisk": 58,
+    "structuralFragilityRisk": 55,
     "tailRiskPricing": 18,
     "severity": 82,
-    "systemicRisk": 54,
+    "systemicRisk": 55,
     "crashRisk": 82,
     "signalCoherence": 61,
     "contradictionSeverity": 0,
@@ -45,16 +45,16 @@
       "urgentOverrideAllowed": false,
       "rawScoreActive": true,
       "rawScoreThreshold": 55,
-      "benchmarkScore": 38,
+      "benchmarkScore": 58,
       "benchmarkThreshold": 55,
-      "benchmarkGuardrailActive": false,
+      "benchmarkGuardrailActive": true,
       "benchmarkComponents": [
         {
           "id": "equity_trend",
           "label": "SPX/NDX trend stress",
-          "active": false,
-          "points": 0,
-          "detail": "Equity trend stress is absent."
+          "active": true,
+          "points": 20,
+          "detail": "Equity trend stress confirms the warning."
         },
         {
           "id": "volatility",
@@ -95,7 +95,7 @@
       "confirmationPolicyActive": true,
       "confirmationGateCount": 2,
       "effectivePermission": "daily_close_guardrail",
-      "reason": "Live confirmation policy is active; use as daily-close guardrail, not hourly rebalance or validated alpha.",
+      "reason": "Live benchmark guardrail and confirmation policy are both active; review at the daily close, then batch allocation changes over roughly 2 weeks to 1 month unless the urgent override is confirmed.",
       "gates": [
         {
           "id": "credit",
@@ -124,8 +124,8 @@
         {
           "id": "risk_trend",
           "label": "Risk trend",
-          "active": false,
-          "detail": "SPX/NDX short-term stress is absent."
+          "active": true,
+          "detail": "SPX/NDX short-term stress is active."
         }
       ]
     },
@@ -133,9 +133,9 @@
     "newAlertCount": 0,
     "dataAlertCount": 0,
     "keyDrivers": [
-      "Liquidity squeeze risk 57/100",
-      "Structural fragility risk 54/100",
-      "Credit accident risk 53/100",
+      "Liquidity squeeze risk 58/100",
+      "Structural fragility risk 55/100",
+      "Credit accident risk 54/100",
       "Acute shock risk 38/100"
     ],
     "contributionBySignal": {
@@ -143,8 +143,8 @@
       "UKOIL": 2.8,
       "GC1!": 1,
       "VIX": 0.7,
-      "BAMLH0A0HYM2": 20.2,
-      "HYG": 22.4,
+      "BAMLH0A0HYM2": 19.5,
+      "HYG": 22.6,
       "MOVE": 1.9,
       "US10Y": 21.4,
       "DXY": 3.8,
@@ -153,14 +153,14 @@
     },
     "contributionByPillar": {
       "geopoliticalHeat": 8.8,
-      "creditStress": 26.2,
+      "creditStress": 26.5,
       "liquidityPressure": 19.3,
-      "overrideImpact": 28.6
+      "overrideImpact": 27.8
     },
     "primaryCrashDrivers": [
       {
         "id": "HYG",
-        "contribution": 22.4,
+        "contribution": 22.6,
         "type": "confirmation"
       },
       {
@@ -170,7 +170,7 @@
       },
       {
         "id": "BAMLH0A0HYM2",
-        "contribution": 20.2,
+        "contribution": 19.5,
         "type": "confirmation"
       },
       {
@@ -188,7 +188,7 @@
       {
         "id": "BAMLH0A0HYM2",
         "label": "HY OAS >= 4.25 warning line",
-        "effect": "floor 55 (+1.6)"
+        "effect": "floor 55 (+0.8)"
       },
       {
         "id": "HYG",
@@ -223,17 +223,17 @@
         "distance": 0.01,
         "direction": "above",
         "state": "active",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "HYG",
         "label": "Structural line",
-        "current": 79.96,
+        "current": 79.905,
         "threshold": 80,
-        "distance": 0.04,
+        "distance": 0.095,
         "direction": "below",
         "state": "active",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "TNX",
@@ -243,7 +243,7 @@
         "distance": 0.1,
         "direction": "above",
         "state": "active",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "T10Y2Y",
@@ -266,16 +266,6 @@
         "lastTriggeredAt": null
       },
       {
-        "instrumentId": "BAMLH0A0HYM2",
-        "label": "Watch",
-        "current": 4.264000000000002,
-        "threshold": 4,
-        "distance": 0.264,
-        "direction": "above",
-        "state": "active",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
-      },
-      {
         "instrumentId": "T10Y2Y",
         "label": "Inversion",
         "current": 0.2699999999999996,
@@ -284,6 +274,16 @@
         "direction": "below",
         "state": "inactive",
         "lastTriggeredAt": null
+      },
+      {
+        "instrumentId": "BAMLH0A0HYM2",
+        "label": "Watch",
+        "current": 4.28325,
+        "threshold": 4,
+        "distance": 0.2832,
+        "direction": "above",
+        "state": "active",
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "DXY",
@@ -318,9 +318,9 @@
       {
         "instrumentId": "BAMLH0A0HYM2",
         "label": "Stress",
-        "current": 4.264000000000002,
+        "current": 4.28325,
         "threshold": 5,
-        "distance": 0.736,
+        "distance": 0.7168,
         "direction": "above",
         "state": "inactive",
         "lastTriggeredAt": null
@@ -343,8 +343,8 @@
         "vendorSymbol": "CL1!",
         "value": 84.65,
         "timestampExchange": "2026-06-15T21:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 673949,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 681822,
         "freshnessState": "stale",
         "sessionState": "closed",
         "sourceConfidence": 0,
@@ -368,8 +368,8 @@
         "vendorSymbol": "USOIL",
         "value": 84.65,
         "timestampExchange": "2026-06-15T21:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 673949,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 681822,
         "freshnessState": "stale",
         "sessionState": "closed",
         "sourceConfidence": 0,
@@ -393,8 +393,8 @@
         "vendorSymbol": "US10Y",
         "value": 4.51,
         "timestampExchange": "2026-06-22T00:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 144749,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 152622,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -418,8 +418,8 @@
         "vendorSymbol": "TNX",
         "value": 45.099999999999994,
         "timestampExchange": "2026-06-22T00:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 144749,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 152622,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -442,9 +442,9 @@
         "vendor": "marketProvider",
         "vendorSymbol": "MOVE",
         "value": 87.74363096815239,
-        "timestampExchange": "2026-06-23T16:12:28.093Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 1,
+        "timestampExchange": "2026-06-23T18:23:41.965Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 0,
         "freshnessState": "fresh",
         "sessionState": "open",
         "sourceConfidence": 100,
@@ -468,8 +468,8 @@
         "vendorSymbol": "VIX",
         "value": 17.28,
         "timestampExchange": "2026-06-22T00:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 144749,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 152622,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -493,8 +493,8 @@
         "vendorSymbol": "VX1!",
         "value": 18.4508,
         "timestampExchange": "2026-06-22T21:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 69149,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 77022,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -518,8 +518,8 @@
         "vendorSymbol": "VX2!",
         "value": 18.4508,
         "timestampExchange": "2026-06-22T21:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 69149,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 77022,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -534,9 +534,9 @@
         "canonicalId": "HYG",
         "vendor": "marketProvider",
         "vendorSymbol": "HYG",
-        "value": 79.96,
-        "timestampExchange": "2026-06-23T16:12:24.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
+        "value": 79.905,
+        "timestampExchange": "2026-06-23T18:23:37.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
         "ageSeconds": 5,
         "freshnessState": "delayed",
         "sessionState": "closed",
@@ -550,7 +550,7 @@
         "nearestRule": {
           "label": "Structural line",
           "threshold": 80,
-          "distance": -0.04,
+          "distance": -0.095,
           "direction": "below"
         },
         "keyLevelInPlay": "Structural line"
@@ -559,10 +559,10 @@
         "canonicalId": "BAMLH0A0HYM2",
         "vendor": "macroProvider",
         "vendorSymbol": "BAMLH0A0HYM2",
-        "value": 4.264000000000002,
-        "timestampExchange": "2026-06-23T16:12:27.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 2,
+        "value": 4.28325,
+        "timestampExchange": "2026-06-23T18:23:41.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 1,
         "freshnessState": "fresh",
         "sessionState": "closed",
         "sourceConfidence": 100,
@@ -575,7 +575,7 @@
         "nearestRule": {
           "label": "Watch",
           "threshold": 4,
-          "distance": 0.264,
+          "distance": 0.2832,
           "direction": "above"
         },
         "keyLevelInPlay": "Watch"
@@ -586,8 +586,8 @@
         "vendorSymbol": "DXY",
         "value": 100.96837475491512,
         "timestampExchange": "2026-06-23T00:02:31.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 58198,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 66071,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -611,8 +611,8 @@
         "vendorSymbol": "T10Y2Y",
         "value": 0.2699999999999996,
         "timestampExchange": "2026-06-22T00:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 144749,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 152622,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -634,9 +634,9 @@
         "canonicalId": "SPX",
         "vendor": "marketProvider",
         "vendorSymbol": "SPX",
-        "value": 7375.401000000001,
-        "timestampExchange": "2026-06-23T16:12:25.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
+        "value": 7357.5,
+        "timestampExchange": "2026-06-23T18:23:38.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
         "ageSeconds": 4,
         "freshnessState": "delayed",
         "sessionState": "closed",
@@ -652,9 +652,9 @@
         "canonicalId": "NDX",
         "vendor": "marketProvider",
         "vendorSymbol": "NDX",
-        "value": 29586,
-        "timestampExchange": "2026-06-23T16:12:27.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
+        "value": 29422.07,
+        "timestampExchange": "2026-06-23T18:23:40.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
         "ageSeconds": 2,
         "freshnessState": "delayed",
         "sessionState": "closed",
@@ -670,10 +670,10 @@
         "canonicalId": "GC1!",
         "vendor": "marketProvider",
         "vendorSymbol": "GC1!",
-        "value": 3924.547,
-        "timestampExchange": "2026-06-23T16:12:27.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 2,
+        "value": 3913.3280999999997,
+        "timestampExchange": "2026-06-23T18:23:41.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 1,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -686,7 +686,7 @@
         "nearestRule": {
           "label": "Psychological support",
           "threshold": 5000,
-          "distance": -1075.453,
+          "distance": -1086.6719,
           "direction": "below"
         },
         "keyLevelInPlay": "Psychological support"
@@ -695,10 +695,10 @@
         "canonicalId": "GOLD",
         "vendor": "marketProvider",
         "vendorSymbol": "GOLD",
-        "value": 3924.547,
-        "timestampExchange": "2026-06-23T16:12:27.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 2,
+        "value": 3913.3280999999997,
+        "timestampExchange": "2026-06-23T18:23:41.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 1,
         "freshnessState": "delayed",
         "sessionState": "closed",
         "sourceConfidence": 65,
@@ -711,7 +711,7 @@
         "nearestRule": {
           "label": "Psychological support",
           "threshold": 5000,
-          "distance": -1075.453,
+          "distance": -1086.6719,
           "direction": "below"
         },
         "keyLevelInPlay": "Psychological support"
@@ -722,8 +722,8 @@
         "vendorSymbol": "UKOIL",
         "value": 84.36,
         "timestampExchange": "2026-06-15T21:00:00.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
-        "ageSeconds": 673949,
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
+        "ageSeconds": 681822,
         "freshnessState": "stale",
         "sessionState": "closed",
         "sourceConfidence": 0,
@@ -745,9 +745,9 @@
         "canonicalId": "BTCUSDT",
         "vendor": "marketProvider",
         "vendorSymbol": "BTCUSDT",
-        "value": 62664.52,
-        "timestampExchange": "2026-06-23T16:12:25.000Z",
-        "timestampIngested": "2026-06-23T16:12:29.434Z",
+        "value": 62303.31,
+        "timestampExchange": "2026-06-23T18:23:38.000Z",
+        "timestampIngested": "2026-06-23T18:23:42.243Z",
         "ageSeconds": 4,
         "freshnessState": "fresh",
         "sessionState": "open",
@@ -761,7 +761,7 @@
         "nearestRule": {
           "label": "Major floor",
           "threshold": 60000,
-          "distance": 2664.52,
+          "distance": 2303.31,
           "direction": "below"
         },
         "keyLevelInPlay": "Major floor"
@@ -776,7 +776,7 @@
         "threshold": 80,
         "distance": 4.650000000000006,
         "ruleLabel": "Persistent tension",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "USOIL",
@@ -786,7 +786,7 @@
         "threshold": 80,
         "distance": 4.650000000000006,
         "ruleLabel": "Persistent tension",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "US10Y",
@@ -796,7 +796,7 @@
         "threshold": 4.5,
         "distance": 0.009999999999999787,
         "ruleLabel": "Higher-rate stress",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "TNX",
@@ -806,7 +806,7 @@
         "threshold": 45,
         "distance": 0.09999999999999432,
         "ruleLabel": "Higher-rate stress",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "MOVE",
@@ -816,7 +816,7 @@
         "threshold": 80,
         "distance": 7.743630968152388,
         "ruleLabel": "Uneasy regime",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:41.966Z"
       },
       {
         "instrumentId": "VIX",
@@ -849,21 +849,21 @@
         "instrumentId": "HYG",
         "state": "warning",
         "severity": "warning",
-        "current": 79.96,
+        "current": 79.905,
         "threshold": 80,
-        "distance": -0.04000000000000625,
+        "distance": -0.09499999999999886,
         "ruleLabel": "Structural line",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "BAMLH0A0HYM2",
         "state": "watch",
         "severity": "watch",
-        "current": 4.264000000000002,
+        "current": 4.28325,
         "threshold": 4,
-        "distance": 0.264000000000002,
+        "distance": 0.2832499999999998,
         "ruleLabel": "Watch",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "DXY",
@@ -889,35 +889,35 @@
         "instrumentId": "SPX",
         "state": "normal",
         "severity": "info",
-        "current": 7375.401000000001,
+        "current": 7357.5,
         "lastTriggeredAt": null
       },
       {
         "instrumentId": "NDX",
         "state": "normal",
         "severity": "info",
-        "current": 29586,
+        "current": 29422.07,
         "lastTriggeredAt": null
       },
       {
         "instrumentId": "GC1!",
         "state": "watch",
         "severity": "watch",
-        "current": 3924.547,
+        "current": 3913.3280999999997,
         "threshold": 5000,
-        "distance": -1075.453,
+        "distance": -1086.6719000000003,
         "ruleLabel": "Psychological support",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "GOLD",
         "state": "watch",
         "severity": "watch",
-        "current": 3924.547,
+        "current": 3913.3280999999997,
         "threshold": 5000,
-        "distance": -1075.453,
+        "distance": -1086.6719000000003,
         "ruleLabel": "Psychological support",
-        "lastTriggeredAt": "2026-06-23T16:12:27.981Z"
+        "lastTriggeredAt": "2026-06-23T18:23:40.996Z"
       },
       {
         "instrumentId": "UKOIL",
@@ -933,9 +933,9 @@
         "instrumentId": "BTCUSDT",
         "state": "normal",
         "severity": "info",
-        "current": 62664.52,
+        "current": 62303.31,
         "threshold": 60000,
-        "distance": 2664.519999999997,
+        "distance": 2303.3099999999977,
         "ruleLabel": "Major floor",
         "lastTriggeredAt": null
       }
@@ -946,25 +946,25 @@
         "provider": "marketProvider",
         "ok": true,
         "message": "public live feed",
-        "lastHeartbeat": "2026-06-23T16:12:28.093Z"
+        "lastHeartbeat": "2026-06-23T18:23:41.966Z"
       },
       {
         "provider": "macroProvider",
         "ok": true,
         "message": "FRED public CSV",
-        "lastHeartbeat": "2026-06-23T16:12:27.981Z"
+        "lastHeartbeat": "2026-06-23T18:23:41.730Z"
       },
       {
         "provider": "redis",
         "ok": false,
         "message": "memory fallback",
-        "lastHeartbeat": "2026-06-23T16:12:21.028Z"
+        "lastHeartbeat": "2026-06-23T18:23:35.893Z"
       },
       {
         "provider": "database",
         "ok": false,
         "message": "memory fallback",
-        "lastHeartbeat": "2026-06-23T16:12:21.028Z"
+        "lastHeartbeat": "2026-06-23T18:23:35.893Z"
       }
     ],
     "counters": {
@@ -1021,41 +1021,41 @@
       "status": "ready",
       "loaded": 18,
       "total": 18,
-      "lastBootstrapAt": "2026-06-23T16:12:27.960Z",
-      "latestSummaryAt": "2026-06-23T16:12:29.179Z"
+      "lastBootstrapAt": "2026-06-23T18:23:41.708Z",
+      "latestSummaryAt": "2026-06-23T18:23:42.023Z"
     },
     "providers": [
       {
         "provider": "marketProvider",
         "ok": true,
         "message": "public live feed",
-        "lastHeartbeat": "2026-06-23T16:12:28.093Z"
+        "lastHeartbeat": "2026-06-23T18:23:41.966Z"
       },
       {
         "provider": "macroProvider",
         "ok": true,
         "message": "FRED public CSV",
-        "lastHeartbeat": "2026-06-23T16:12:27.981Z"
+        "lastHeartbeat": "2026-06-23T18:23:41.730Z"
       },
       {
         "provider": "redis",
         "ok": false,
         "message": "memory fallback",
-        "lastHeartbeat": "2026-06-23T16:12:21.028Z"
+        "lastHeartbeat": "2026-06-23T18:23:35.893Z"
       },
       {
         "provider": "database",
         "ok": false,
         "message": "memory fallback",
-        "lastHeartbeat": "2026-06-23T16:12:21.028Z"
+        "lastHeartbeat": "2026-06-23T18:23:35.893Z"
       }
     ]
   },
   "dataHealth": {
-    "asOf": "2026-06-23T16:12:29.433Z",
+    "asOf": "2026-06-23T18:23:42.242Z",
     "sourceMode": "live",
     "bootstrapStatus": "ready",
-    "latestSummaryAt": "2026-06-23T16:12:29.179Z",
+    "latestSummaryAt": "2026-06-23T18:23:42.023Z",
     "degradedReason": null,
     "counts": {
       "valid": 18,
@@ -1082,7 +1082,7 @@
         "historyBars": 79,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-15T21:00:00.000Z",
-        "ageSeconds": 673949,
+        "ageSeconds": 681822,
         "keyLevelInPlay": "Persistent tension",
         "qualityFlags": []
       },
@@ -1102,7 +1102,7 @@
         "historyBars": 79,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-15T21:00:00.000Z",
-        "ageSeconds": 673949,
+        "ageSeconds": 681822,
         "keyLevelInPlay": "Persistent tension",
         "qualityFlags": []
       },
@@ -1122,7 +1122,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-22T00:00:00.000Z",
-        "ageSeconds": 144749,
+        "ageSeconds": 152622,
         "keyLevelInPlay": "Higher-rate stress",
         "qualityFlags": []
       },
@@ -1142,7 +1142,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-22T00:00:00.000Z",
-        "ageSeconds": 144749,
+        "ageSeconds": 152622,
         "keyLevelInPlay": "Higher-rate stress",
         "qualityFlags": []
       },
@@ -1161,8 +1161,8 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:28.093Z",
-        "ageSeconds": 1,
+        "latestTimestamp": "2026-06-23T18:23:41.965Z",
+        "ageSeconds": 0,
         "keyLevelInPlay": "Uneasy regime",
         "qualityFlags": []
       },
@@ -1182,7 +1182,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-22T00:00:00.000Z",
-        "ageSeconds": 144749,
+        "ageSeconds": 152622,
         "keyLevelInPlay": "Stress regime",
         "qualityFlags": []
       },
@@ -1202,7 +1202,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-22T21:00:00.000Z",
-        "ageSeconds": 69149,
+        "ageSeconds": 77022,
         "keyLevelInPlay": "High immediate stress",
         "qualityFlags": []
       },
@@ -1222,7 +1222,7 @@
         "historyBars": 0,
         "nearestRulePresent": false,
         "latestTimestamp": "2026-06-22T21:00:00.000Z",
-        "ageSeconds": 69149,
+        "ageSeconds": 77022,
         "qualityFlags": []
       },
       {
@@ -1240,7 +1240,7 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:24.000Z",
+        "latestTimestamp": "2026-06-23T18:23:37.000Z",
         "ageSeconds": 5,
         "keyLevelInPlay": "Structural line",
         "qualityFlags": []
@@ -1260,8 +1260,8 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:27.000Z",
-        "ageSeconds": 2,
+        "latestTimestamp": "2026-06-23T18:23:41.000Z",
+        "ageSeconds": 1,
         "keyLevelInPlay": "Watch",
         "qualityFlags": []
       },
@@ -1281,7 +1281,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-23T00:02:31.000Z",
-        "ageSeconds": 58198,
+        "ageSeconds": 66071,
         "keyLevelInPlay": "Squeeze watch",
         "qualityFlags": []
       },
@@ -1301,7 +1301,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-22T00:00:00.000Z",
-        "ageSeconds": 144749,
+        "ageSeconds": 152622,
         "keyLevelInPlay": "Flat curve",
         "qualityFlags": []
       },
@@ -1320,7 +1320,7 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": false,
-        "latestTimestamp": "2026-06-23T16:12:25.000Z",
+        "latestTimestamp": "2026-06-23T18:23:38.000Z",
         "ageSeconds": 4,
         "qualityFlags": []
       },
@@ -1339,7 +1339,7 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": false,
-        "latestTimestamp": "2026-06-23T16:12:27.000Z",
+        "latestTimestamp": "2026-06-23T18:23:40.000Z",
         "ageSeconds": 2,
         "qualityFlags": []
       },
@@ -1358,8 +1358,8 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:27.000Z",
-        "ageSeconds": 2,
+        "latestTimestamp": "2026-06-23T18:23:41.000Z",
+        "ageSeconds": 1,
         "keyLevelInPlay": "Psychological support",
         "qualityFlags": []
       },
@@ -1378,8 +1378,8 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:27.000Z",
-        "ageSeconds": 2,
+        "latestTimestamp": "2026-06-23T18:23:41.000Z",
+        "ageSeconds": 1,
         "keyLevelInPlay": "Psychological support",
         "qualityFlags": []
       },
@@ -1399,7 +1399,7 @@
         "historyBars": 0,
         "nearestRulePresent": true,
         "latestTimestamp": "2026-06-15T21:00:00.000Z",
-        "ageSeconds": 673949,
+        "ageSeconds": 681822,
         "keyLevelInPlay": "High stress",
         "qualityFlags": []
       },
@@ -1418,7 +1418,7 @@
         "historyAvailable": false,
         "historyBars": 0,
         "nearestRulePresent": true,
-        "latestTimestamp": "2026-06-23T16:12:25.000Z",
+        "latestTimestamp": "2026-06-23T18:23:38.000Z",
         "ageSeconds": 4,
         "keyLevelInPlay": "Major floor",
         "qualityFlags": []
