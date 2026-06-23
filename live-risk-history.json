@@ -2,7 +2,7 @@
   "version": 1,
   "source": "macro-war-room-public-summary-v2",
   "publicUrl": "https://crashriskmonitor.vercel.app",
-  "updatedAt": "2026-06-23T20:36:31.848Z",
+  "updatedAt": "2026-06-23T22:20:18.099Z",
   "keepDays": 90,
   "buckets": [
     {
@@ -79,6 +79,92 @@
       "condition": "red",
       "dominantRegime": "Systemic Crash Setup",
       "confidenceStatus": "ready",
+      "sourceMode": "live",
+      "samples": 1
+    },
+    {
+      "bucketStart": "2026-06-23T22:00:00.000Z",
+      "crashRisk": 82,
+      "severity": 82,
+      "signalCoherence": 61,
+      "condition": "red",
+      "dominantRegime": "Systemic Crash Setup",
+      "confidenceStatus": "ready",
+      "recommendationState": "enabled",
+      "actionPermission": "daily_close_guardrail",
+      "modelVersion": "trust-engine-v2.4.0",
+      "policyVersion": "portfolio-policy-daily-close-v1.2.0",
+      "dataFingerprint": "dfp_920e15e55871eb0c",
+      "topContributors": [
+        {
+          "id": "HYG",
+          "contribution": 22.7,
+          "type": "confirmation"
+        },
+        {
+          "id": "BAMLH0A0HYM2",
+          "contribution": 20.9,
+          "type": "confirmation"
+        },
+        {
+          "id": "US10Y",
+          "contribution": 20.6,
+          "type": "override"
+        },
+        {
+          "id": "CL1!",
+          "contribution": 4.7,
+          "type": "base_weight"
+        },
+        {
+          "id": "DXY",
+          "contribution": 3.8,
+          "type": "base_weight"
+        }
+      ],
+      "outcomeReview": {
+        "status": "pending",
+        "publicReadThreshold": 60,
+        "publicReadCrossed": true,
+        "benchmarkCrossed": null,
+        "actionGateOpen": true,
+        "falseAlertOrMiss": "pending",
+        "modelVersion": "trust-engine-v2.4.0",
+        "policyVersion": "portfolio-policy-daily-close-v1.2.0",
+        "dataFingerprint": "dfp_920e15e55871eb0c",
+        "windows": [
+          {
+            "id": "spx_1d_minus_2_5",
+            "label": "SPX -2.5% within 1 session",
+            "horizonSessions": 1,
+            "forwardSpDrawdownPct": null,
+            "riskEvent": null,
+            "matured": false,
+            "benchmarkCrossed": null,
+            "classification": "pending"
+          },
+          {
+            "id": "spx_5d_minus_5",
+            "label": "SPX -5% within 5 sessions",
+            "horizonSessions": 5,
+            "forwardSpDrawdownPct": null,
+            "riskEvent": null,
+            "matured": false,
+            "benchmarkCrossed": null,
+            "classification": "pending"
+          },
+          {
+            "id": "spx_20d_minus_10",
+            "label": "SPX -10% within 20 sessions",
+            "horizonSessions": 20,
+            "forwardSpDrawdownPct": null,
+            "riskEvent": null,
+            "matured": false,
+            "benchmarkCrossed": null,
+            "classification": "pending"
+          }
+        ]
+      },
       "sourceMode": "live",
       "samples": 1
     }
